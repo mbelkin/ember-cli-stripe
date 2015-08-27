@@ -199,13 +199,13 @@ export default Ember.Component.extend({
       key: this.get('key'),
       locale: this.get('locale'),
       token: function(token) {
-        self.sendAction('action', token);
+        self.sendAction('action', token, self);
       },
       opened: function() {
-        self.sendAction('opened');
+        self.sendAction('opened', self);
       },
       closed: function() {
-        self.sendAction('closed');
+        self.sendAction('closed', self);
       }
     });
     this.set('handler', handler);
